@@ -1,0 +1,38 @@
+<p>
+  user works! {{name}}
+</p>
+
+<ul>
+  <li>Age: {{age}}</li>
+  <li>Email: {{email}}</li>
+  <li>{{address.street}} {{address.city}}</li>
+</ul>
+
+{{hobbies}}
+
+<h1>Hobbies</h1>
+<ul>
+  <li *ngFor="let hobby of hobbies; let i = index">{{i + 1}} {{hobby}}</li>
+</ul>
+
+
+<button (click)="onClick()">Click me</button>
+
+<form (submit)="addHobby(hobby_.value)">
+  <div>
+    <label for="hobby_">Hobby:</label>
+    <input type="text" #hobby_>
+    <button type="submit">ADD!!!</button>
+  </div>
+</form>
+
+
+<input type="text" [(ngModel)]="name" name="name">
+<!--Связка биндинг просто  FormsModule импортирован в главном модуле для этого-->
+
+<hr>
+<h2>POSTS</h2>
+<div *ngFor="let post of posts">
+  <h3>{{post.title}}</h3>
+    <p>{{post.body}}</p>
+</div>
